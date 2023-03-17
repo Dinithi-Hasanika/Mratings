@@ -8,6 +8,7 @@ import { AboutMratingsComponent } from './ui/about-mratings/about-mratings.compo
 import { LoginComponent } from './ui/login/login.component';
 import { AsgardeoAuthModule } from "@asgardeo/auth-angular";
 import { LandingComponent } from './ui/landing/landing.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { LandingComponent } from './ui/landing/landing.component';
       baseUrl: "https://api.asgardeo.io/t/mratings",
       scope: ['openid', 'profile']
   }),
+  HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,6 +6,7 @@ import com.example.demo.exceptions.APIException;
 import com.example.demo.services.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,11 +29,13 @@ public class UserRestController {
         return ResponseEntity.ok(userServices.addUser(user));
     }
 
+    @CrossOrigin(origins = "http://localhost:4201")
     @GetMapping("/user/{user_id}")
     public ResponseEntity<User> getUserById(@PathVariable String user_id) throws APIException {
         return ResponseEntity.ok(userServices.getUserById(user_id));
     }
 
+    @CrossOrigin(origins = "http://localhost:4201")
     @GetMapping("/users")
     public ResponseEntity<List<User>> getAllUsers(){
         return ResponseEntity.ok(userServices.getUsers());
