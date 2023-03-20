@@ -10,6 +10,8 @@ import { AsgardeoAuthModule } from "@asgardeo/auth-angular";
 import { LandingComponent } from './ui/landing/landing.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AfterAuthComponent } from './ui/after-auth/after-auth.component';
+import { AdminHomeComponent } from './ui/admin-view/admin-home/admin-home.component';
+import { MraterHomeComponent } from './ui/mrater-view/mrater-home/mrater-home.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { AfterAuthComponent } from './ui/after-auth/after-auth.component';
     AboutMratingsComponent,
     LoginComponent,
     LandingComponent,
-    AfterAuthComponent
+    AfterAuthComponent,
+    AdminHomeComponent,
+    MraterHomeComponent
   ],
   imports: [
     BrowserModule,

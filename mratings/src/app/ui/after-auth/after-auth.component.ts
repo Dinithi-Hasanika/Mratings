@@ -21,7 +21,13 @@ export class AfterAuthComponent implements OnInit {
           .getBasicUserInfo()
           .then((user: BasicUserInfo) => {
             if(user['groups']){
-            console.log(user['groups'].includes('Admin'));
+            if(user['groups'].includes('Admin')){
+              this.goAdminView();
+            }else{
+              this.goMraterView();
+            }
+            }else{
+              this.goMraterView();
             }
           });
       }else if(!state.isLoading && !state.isAuthenticated){
@@ -33,6 +39,14 @@ export class AfterAuthComponent implements OnInit {
 
   goLandingPage(){
     this.router.navigate(['']);
+  }
+
+  goAdminView(){
+    this.router.navigate(['admin/home']);
+  }
+
+  goMraterView(){
+    this.router.navigate(['mrater/home']);
   }
 
 }
