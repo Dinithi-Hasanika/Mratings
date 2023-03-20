@@ -9,6 +9,7 @@ import { LoginComponent } from './ui/login/login.component';
 import { AsgardeoAuthModule } from "@asgardeo/auth-angular";
 import { LandingComponent } from './ui/landing/landing.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AfterAuthComponent } from './ui/after-auth/after-auth.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     NavBarComponent,
     AboutMratingsComponent,
     LoginComponent,
-    LandingComponent
+    LandingComponent,
+    AfterAuthComponent
   ],
   imports: [
     BrowserModule,
