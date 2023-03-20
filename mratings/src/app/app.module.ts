@@ -27,7 +27,7 @@ import { AfterAuthComponent } from './ui/after-auth/after-auth.component';
       signInRedirectURL: "http://localhost:4201/afterauth",
       clientID: "R56Di7i2RydW4h4XzYkCp3fGpVAa",
       baseUrl: "https://api.asgardeo.io/t/mratings",
-      scope: ['openid', 'profile']
+      scope: ['openid', 'profile', 'groups']
   }),
   HttpClientModule
   ],

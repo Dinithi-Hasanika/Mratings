@@ -17,6 +17,13 @@ export class AfterAuthComponent implements OnInit {
       console.log(state);
       if(!state.isLoading && state.isAuthenticated){
           console.log("inside");
+          this.auth
+          .getBasicUserInfo()
+          .then((user: BasicUserInfo) => {
+            if(user['groups']){
+            console.log(user['groups'].includes('Admin'));
+            }
+          });
       }else if(!state.isLoading && !state.isAuthenticated){
           this.goLandingPage();
       }
