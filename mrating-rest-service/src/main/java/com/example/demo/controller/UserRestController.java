@@ -29,13 +29,13 @@ public class UserRestController {
         return ResponseEntity.ok(userServices.addUser(user));
     }
 
-    @CrossOrigin(origins = "http://localhost:4201")
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/user/{user_id}")
     public ResponseEntity<User> getUserById(@PathVariable String user_id) throws APIException {
         return ResponseEntity.ok(userServices.getUserById(user_id));
     }
 
-    @CrossOrigin(origins = "http://localhost:4201")
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/users")
     public ResponseEntity<List<User>> getAllUsers(){
         return ResponseEntity.ok(userServices.getUsers());
