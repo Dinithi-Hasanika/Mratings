@@ -4,11 +4,12 @@ import { AdminHomeComponent } from './ui/admin-view/admin-home/admin-home.compon
 import { AfterAuthComponent } from './ui/after-auth/after-auth.component';
 import { LandingComponent } from './ui/landing/landing.component';
 import { MraterHomeComponent } from './ui/mrater-view/mrater-home/mrater-home.component';
+import { AuthGuard } from './guards/auth/auth.guard';
 
 const routes: Routes = [
   { path: "", component: LandingComponent },
   { path: "afterauth", component: AfterAuthComponent },
-  {path: "admin/home", component:AdminHomeComponent},
+  {path: "admin/home", component:AdminHomeComponent, canActivate:[AuthGuard]},
   {path: "mrater/home", component: MraterHomeComponent}
 ];
 

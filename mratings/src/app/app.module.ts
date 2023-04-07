@@ -28,7 +28,7 @@ import { MraterHomeComponent } from './ui/mrater-view/mrater-home/mrater-home.co
     BrowserModule,
     AppRoutingModule,
     AsgardeoAuthModule.forRoot({
-      signInRedirectURL: "http://localhost:4201/afterauth",
+      signInRedirectURL: "http://localhost:4200/afterauth",
       clientID: "R56Di7i2RydW4h4XzYkCp3fGpVAa",
       baseUrl: "https://api.asgardeo.io/t/mratings",
       scope: ['openid', 'profile', 'groups']

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AsgardeoAuthService } from "@asgardeo/auth-angular";
-import { UserService } from 'src/app/services/user.service';
+import { UserService } from 'src/app/services/users/user.service';
 
 @Component({
   selector: 'app-login',

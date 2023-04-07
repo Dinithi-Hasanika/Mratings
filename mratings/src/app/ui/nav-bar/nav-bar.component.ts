@@ -9,12 +9,14 @@ import { AsgardeoAuthService, AuthStateInterface } from "@asgardeo/auth-angular"
 export class NavBarComponent implements OnInit {
 
   public isAuthenticated = false;
+  public username = "";
 
   constructor(private auth: AsgardeoAuthService) { }
 
   ngOnInit(): void {
     this.auth.state$.subscribe((state: AuthStateInterface) => {
       this.isAuthenticated = state.isAuthenticated;
+      this.username = state.username;
     })
   }
 
