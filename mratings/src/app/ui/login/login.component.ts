@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AsgardeoAuthService } from "@asgardeo/auth-angular";
+import { AsgardeoAuthService, AuthStateInterface } from "@asgardeo/auth-angular";
 import { UserService } from 'src/app/services/users/user.service';
 
 @Component({
@@ -10,6 +10,9 @@ import { UserService } from 'src/app/services/users/user.service';
 export class LoginComponent implements OnInit {
 
 constructor(private auth: AsgardeoAuthService, private userService: UserService) { }
+
+public isAuthenticated = false;
+
   handleSignIn(): void {
     console.log("button clicked!");
     this.auth.signIn();
@@ -29,6 +32,9 @@ listbasic(): void{
 }
 
   ngOnInit(): void {
+    this.auth.state$.subscribe((state: AuthStateInterface) => {
+      this.isAuthenticated = state.isAuthenticated;
+    })
   }
 
 }
