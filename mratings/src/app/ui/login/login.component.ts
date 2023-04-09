@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AsgardeoAuthService, AuthStateInterface } from "@asgardeo/auth-angular";
+import { AppAuthService } from 'src/app/services/app-auth/app-auth.service';
 import { UserService } from 'src/app/services/users/user.service';
 
 @Component({
@@ -9,32 +10,29 @@ import { UserService } from 'src/app/services/users/user.service';
 })
 export class LoginComponent implements OnInit {
 
-constructor(private auth: AsgardeoAuthService, private userService: UserService) { }
+constructor(private auth: AsgardeoAuthService, private userService: UserService, private authService: AppAuthService) { }
 
-public isAuthenticated = false;
+//public isAuthenticated = false;
 
   handleSignIn(): void {
-    console.log("button clicked!");
     this.auth.signIn();
 }
 
 handbasic(): void{
-  console.log("hey you!!");
-  console.log("button clicked!");
   this.auth.signIn();
 }
 
 listbasic(): void{
-  console.log("hey users!!");
   this.userService.getUsers().subscribe(data => {
     console.log(data);
   })
 }
 
+isAuthenticated(): boolean{
+  return this.authService.isAuthenticated();
+}
+
   ngOnInit(): void {
-    this.auth.state$.subscribe((state: AuthStateInterface) => {
-      this.isAuthenticated = state.isAuthenticated;
-    })
   }
 
 }
