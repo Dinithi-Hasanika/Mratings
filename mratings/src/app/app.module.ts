@@ -12,6 +12,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AfterAuthComponent } from './ui/after-auth/after-auth.component';
 import { AdminHomeComponent } from './ui/admin-view/admin-home/admin-home.component';
 import { MraterHomeComponent } from './ui/mrater-view/mrater-home/mrater-home.component';
+import { ControlPanelComponent } from './ui/admin-view/control-panel/control-panel/control-panel.component';
+import { MovieSpaceComponent } from './ui/admin-view/movie-space/movie-space.component';
+import { MoviesComponent } from './ui/admin-view/movies/movies.component';
+import { UsersComponent } from './ui/admin-view/users/users.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { MraterHomeComponent } from './ui/mrater-view/mrater-home/mrater-home.co
     LandingComponent,
     AfterAuthComponent,
     AdminHomeComponent,
-    MraterHomeComponent
+    MraterHomeComponent,
+    ControlPanelComponent,
+    MovieSpaceComponent,
+    MoviesComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
