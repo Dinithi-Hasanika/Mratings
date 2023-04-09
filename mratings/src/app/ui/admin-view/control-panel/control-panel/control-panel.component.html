@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="column1" style="margin-top: 5%;">
+      <div style="margin-left: 5%;"><button (click)="setActiveButton('movie_spaces')"  [ngClass]="getActiveButton() == 'movie_spaces' ? 'button clicked-button' : 'button button4'" >Movie Spaces</button></div>
+      <div style="margin-left: 5%;"><button (click)="setActiveButton('movies')"  [ngClass]="getActiveButton() == 'movies' ? 'button clicked-button' : 'button button4'"  >Movies</button></div>
+      <div style="margin-left: 5%;"><button (click)="setActiveButton('users')"  [ngClass]="getActiveButton() == 'users' ? 'button clicked-button' : 'button button4'"  >Users</button></div>
+    </div>
+    <div class="column" style="margin-top: 5%;">
+      <app-movie-space *ngIf="getActiveButton() == 'movie_spaces'"></app-movie-space>
+      <app-movies *ngIf="getActiveButton() == 'movies'"></app-movies>
+      <app-users *ngIf="getActiveButton() == 'users'"></app-users>
+    </div>
+  </div>
