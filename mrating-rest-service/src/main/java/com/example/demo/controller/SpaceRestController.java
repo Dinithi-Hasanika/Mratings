@@ -29,16 +29,19 @@ public class SpaceRestController {
         return ResponseEntity.ok(spaceServices.getSpaces());
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/space")
     public ResponseEntity<Space> addSpace(@RequestBody Space space)  {
         return ResponseEntity.ok(spaceServices.addSpace(space));
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/space/{space_id}")
     public ResponseEntity<Space> getSpace(@PathVariable String space_id){
         return ResponseEntity.ok(spaceServices.getSpace(space_id));
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("/space/{space_id}")
     public ResponseEntity<CommonResponse> deleteSpace(@PathVariable String space_id){
         spaceServices.deleteSpace(space_id);

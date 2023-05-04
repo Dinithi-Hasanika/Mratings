@@ -24,6 +24,7 @@ public class UserRestController {
     @Autowired
     private UserServices userServices;
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/user")
     public ResponseEntity<User> addUser(@RequestBody User user) throws APIException {
         return ResponseEntity.ok(userServices.addUser(user));
@@ -41,6 +42,7 @@ public class UserRestController {
         return ResponseEntity.ok(userServices.getUsers());
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("/user/{user_id}")
     public ResponseEntity<CommonResponse> deleteUser(@PathVariable String user_id) throws APIException {
         userServices.deleteUserById(user_id);

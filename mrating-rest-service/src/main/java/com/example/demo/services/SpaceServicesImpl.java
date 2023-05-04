@@ -22,7 +22,7 @@ public class SpaceServicesImpl implements SpaceServices{
     @Override
     public Space getSpace(String id) {
 
-        return spaceRepository.getOne(id);
+        return spaceRepository.findById(id).orElse(null);
     }
 
     @Override
