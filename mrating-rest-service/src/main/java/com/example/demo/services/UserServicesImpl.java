@@ -57,7 +57,6 @@ public class UserServicesImpl implements UserServices{
     public User addUser(User user) throws APIException {
         User newUser;
         try{
-            user.setId(new UserIdGenerator().generateId());
            newUser = userRepository.save(user);
         }catch (Exception e){
             log.error("Error occurred while adding user",e);
