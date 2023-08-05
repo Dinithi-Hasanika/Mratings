@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Space } from 'src/app/entity/Space';
 
 @Component({
   selector: 'app-space-card',
@@ -9,11 +10,7 @@ export class SpaceCardComponent implements OnInit {
 
   constructor() { }
 
-@Input() spaceName= '';
-@Input() description= '';
-@Input() country= '';
-@Input() movies= 0;
-@Input() subscribers= 0;
+@Input() space = {} as Space;
 
   ngOnInit(): void {
   }
