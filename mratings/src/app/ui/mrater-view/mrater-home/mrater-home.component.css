@@ -12,9 +12,7 @@
     display: flex;
   }
 
-  .button {
-   
-   
+  .button { 
     color: black;
     padding: 20px;
     text-align: center;
@@ -22,9 +20,20 @@
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
+    position: fixed;
+    z-index: 0;
   }
 
-
+  .button2 { 
+    color: black;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    position: fixed;
+  }
 .button4 {
     background-color: aliceblue;
     border-radius: 12px;

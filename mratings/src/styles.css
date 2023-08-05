@@ -10,6 +10,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     color: #114168;
     font-weight: 700;
     font-size: 30px;
+    top: 0;
+    z-index: 1000; 
+    position: sticky;
 }
 
 .mat-tab-label.mat-tab-label-active {

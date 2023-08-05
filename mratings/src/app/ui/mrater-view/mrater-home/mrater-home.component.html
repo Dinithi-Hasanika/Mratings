@@ -2,7 +2,7 @@
 <div class="row">
     <div class="column1" style="margin-top: 5%;">
       <div style="margin-left: 5%;"><button (click)="setActiveButton('movie_spaces')"  [ngClass]="getActiveButton() == 'movie_spaces' ? 'button clicked-button' : 'button button4'" >Movie Spaces</button></div>
-      <div style="margin-left: 5%;"><button (click)="setActiveButton('movies')"  [ngClass]="getActiveButton() == 'movies' ? 'button clicked-button' : 'button button4'"  >Movies</button></div>
+      <div style="margin-left: 5%; margin-top: 25%;"><button (click)="setActiveButton('movies')"  [ngClass]="getActiveButton() == 'movies' ? 'button2 clicked-button' : 'button2 button4'"  >Movies</button></div>
     </div>
     <div class="column" style="margin-top: 5%;">
       <app-mrater-spaces *ngIf="getActiveButton() == 'movie_spaces'"></app-mrater-spaces>
