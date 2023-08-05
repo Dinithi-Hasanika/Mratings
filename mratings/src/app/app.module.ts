@@ -19,6 +19,8 @@ import { MoviesComponent } from './ui/admin-view/movies/movies.component';
 import { UsersComponent } from './ui/admin-view/users/users.component';
 import { MraterSpacesComponent } from './ui/mrater-view/mrater-spaces/mrater-spaces.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MySpacesComponent } from './ui/mrater-view/my-spaces/my-spaces.component';
+import { SpaceMarketplaceComponent } from './ui/mrater-view/space-marketplace/space-marketplace.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     MoviesComponent,
     UsersComponent,
     MraterSpacesComponent,
+    MySpacesComponent,
+    SpaceMarketplaceComponent,
   ],
   imports: [
     BrowserModule,
