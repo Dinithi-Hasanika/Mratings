@@ -1,9 +1,8 @@
 package com.example.demo.controller;
 
 import com.example.demo.commons.CommonResponse;
-import com.example.demo.entity.User;
-import com.example.demo.exceptions.APIException;
-import com.example.demo.services.UserServices;
+import com.example.demo.entity.Space;
+import com.example.demo.services.SpaceServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -19,33 +18,33 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1")
-public class UserRestController {
+public class SpaceRestController {
 
     @Autowired
-    private UserServices userServices;
+    private SpaceServices spaceServices;
 
     @CrossOrigin(origins = "http://localhost:4200")
-    @PostMapping("/user")
-    public ResponseEntity<User> addUser(@RequestBody User user) throws APIException {
-        return ResponseEntity.ok(userServices.addUser(user));
+    @GetMapping("/spaces")
+    public ResponseEntity<List<Space>> getAllSpaces(){
+        return ResponseEntity.ok(spaceServices.getSpaces());
     }
 
     @CrossOrigin(origins = "http://localhost:4200")
-    @GetMapping("/user/{user_id}")
-    public ResponseEntity<User> getUserById(@PathVariable String user_id) throws APIException {
-        return ResponseEntity.ok(userServices.getUserById(user_id));
+    @PostMapping("/space")
+    public ResponseEntity<Space> addSpace(@RequestBody Space space)  {
+        return ResponseEntity.ok(spaceServices.addSpace(space));
     }
 
     @CrossOrigin(origins = "http://localhost:4200")
-    @GetMapping("/users")
-    public ResponseEntity<List<User>> getAllUsers(){
-        return ResponseEntity.ok(userServices.getUsers());
+    @GetMapping("/space/{space_id}")
+    public ResponseEntity<Space> getSpace(@PathVariable String space_id){
+        return ResponseEntity.ok(spaceServices.getSpace(space_id));
     }
 
     @CrossOrigin(origins = "http://localhost:4200")
-    @DeleteMapping("/user/{user_id}")
-    public ResponseEntity<CommonResponse> deleteUser(@PathVariable String user_id) throws APIException {
-        userServices.deleteUserById(user_id);
-        return ResponseEntity.ok(new CommonResponse("Successful", "User Deletion Successful"));
+    @DeleteMapping("/space/{space_id}")
+    public ResponseEntity<CommonResponse> deleteSpace(@PathVariable String space_id){
+        spaceServices.deleteSpace(space_id);
+        return ResponseEntity.ok(new CommonResponse("Successful", "Space deletion successful"));
     }
 }

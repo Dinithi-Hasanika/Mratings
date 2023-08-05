@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,8 @@ import { ControlPanelComponent } from './ui/admin-view/control-panel/control-pan
 import { MovieSpaceComponent } from './ui/admin-view/movie-space/movie-space.component';
 import { MoviesComponent } from './ui/admin-view/movies/movies.component';
 import { UsersComponent } from './ui/admin-view/users/users.component';
+import { MraterSpacesComponent } from './ui/mrater-view/mrater-spaces/mrater-spaces.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ import { UsersComponent } from './ui/admin-view/users/users.component';
     ControlPanelComponent,
     MovieSpaceComponent,
     MoviesComponent,
-    UsersComponent
+    UsersComponent,
+    MraterSpacesComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,9 @@ import { UsersComponent } from './ui/admin-view/users/users.component';
       baseUrl: "https://api.asgardeo.io/t/mratings",
       scope: ['openid', 'profile', 'groups']
   }),
-  HttpClientModule
+  HttpClientModule,
+  NoopAnimationsModule,
+  MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
