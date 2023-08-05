@@ -30,6 +30,12 @@ listbasic(): void{
   })
 }
 
+// listbasic(): void{
+//   this.userService.addUser().subscribe(data => {
+//     console.log(data);
+//   })
+// }
+
 listSpaces(): void {
   this.spaceService.getSpaces().subscribe(data =>{
     console.log(data);
