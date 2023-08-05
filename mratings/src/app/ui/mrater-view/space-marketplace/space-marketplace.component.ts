@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Space } from 'src/app/entity/Space';
+import { SpaceService } from 'src/app/services/spaces/space.service';
+
+
 
 @Component({
   selector: 'app-space-marketplace',
@@ -7,9 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SpaceMarketplaceComponent implements OnInit {
 
-  constructor() { }
-  public abc =  "abd";
+  constructor(private spaceService: SpaceService) { }
+  public spaceName =  '';
+  public spaces: Space[] = [];
   ngOnInit(): void {
+
+    this.spaceService.getSpaces().subscribe(data =>{
+     // console.log(data);
+     for(var d of data){
+      console.log(d);
+      this.spaces.push(d as Space)
+     }
+     console.log(this.spaces)
+    })
+
   }
 
 }
