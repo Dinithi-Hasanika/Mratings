@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Space } from 'src/app/entity/Space';
 import { SpaceService } from 'src/app/services/spaces/space.service';
 
@@ -13,7 +13,7 @@ export class SpaceMarketplaceComponent implements OnInit {
 
   constructor(private spaceService: SpaceService) { }
   public spaces: Space[] = [];
-
+  @Input() isAdmin = false;
   ngOnInit(): void {
 
     this.spaceService.getSpaces().subscribe(data =>{
