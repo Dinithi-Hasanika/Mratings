@@ -11,6 +11,7 @@ export class SpaceCardComponent implements OnInit {
   constructor() { }
 
 @Input() space = {} as Space;
+@Input() isAdmin = false;
 
   ngOnInit(): void {
   }

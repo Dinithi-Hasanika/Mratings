@@ -3,6 +3,6 @@
       <h4 style="display: flex; justify-content: center; padding-top:10px ;"><b>{{space.spaceName}}</b></h4> 
       <p style="padding-left: 5%; padding-top:10px ;">{{space.description}}</p> 
       <div style="display: flex; justify-content: space-between; padding-top:20px ;"><p style="padding-left: 5%;">{{space.origin}}</p> <p>{{space.movies}} Movies</p> <p>{{space.followers}} Subscribers</p></div>
-      <div style="display: flex; justify-content: flex-end; padding-bottom: 10px;"><button class="button button4">Subscribe</button></div>  
+      <div style="display: flex; justify-content: flex-end; padding-bottom: 10px;"><button class="button button4" *ngIf="!isAdmin">Subscribe</button><button class="button button4" *ngIf="isAdmin">Edit</button><button class="button button4" *ngIf="isAdmin">Delete</button></div>  
     </div>
   </div>
