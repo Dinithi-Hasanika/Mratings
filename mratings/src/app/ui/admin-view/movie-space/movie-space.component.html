@@ -1,1 +1,4 @@
-<p>movie-space works!</p>
+<mat-tab-group [selectedIndex]="0">
+    <mat-tab label="Space Market Place" > <app-space-marketplace [isAdmin]="isAdmin"></app-space-marketplace> </mat-tab>
+    <mat-tab label="Add Spaces" style="font-size: 30px;"> <app-add-space></app-add-space> </mat-tab>
+  </mat-tab-group>

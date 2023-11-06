@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./movie-space.component.css']
 })
 export class MovieSpaceComponent implements OnInit {
-
+public isAdmin= true;
   constructor() { }
 
   ngOnInit(): void {

@@ -8,7 +8,7 @@ import { Observable, catchError } from 'rxjs';
 })
 export class UserService {
 
-  public baseUrl = "http://localhost:8080/demo/api/v1/";
+  public baseUrl = "http://localhost:8080/mrating/api/v1/";
 
   constructor(private httpClient: HttpClient) { }
 
