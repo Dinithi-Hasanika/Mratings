@@ -1,1 +1,12 @@
-<p>add-spaces works!</p>
+
+<div class="formframe">
+    <div class="formcontent">
+    <button type="submit" class="btn btn-primary buttonspace btncol" (click)="addSpaceCard()">Add Space</button>
+    <button type="submit" class="btn btn-primary btncol">Save</button>
+<div *ngFor="let index of spaceCards">
+    <hr class="solid">
+    <app-add-space-card></app-add-space-card>
+    <button type="submit" class="btn btn-primary deletebtn" (click)="remooveSpaceCard(index)">Delete</button>
+</div>
+</div>
+</div>
