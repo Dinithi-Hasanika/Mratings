@@ -42,4 +42,11 @@ public class SpaceServicesImpl implements SpaceServices{
 
         return null;
     }
+
+    @Override
+    public List<Space> addSpaces(List<Space> spaces) {
+
+        spaces.forEach(space -> space.setId(new UserIdGenerator().generateId()));
+        return spaceRepository.saveAll(spaces);
+    }
 }

@@ -16,4 +16,6 @@ public interface SpaceServices {
 
     Space updateSpace(Space space);
 
+    List<Space> addSpaces(List<Space> spaces);
+
 }
