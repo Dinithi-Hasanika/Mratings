@@ -22,6 +22,9 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MySpacesComponent } from './ui/mrater-view/my-spaces/my-spaces.component';
 import { SpaceMarketplaceComponent } from './ui/mrater-view/space-marketplace/space-marketplace.component';
 import { SpaceCardComponent } from './ui/mrater-view/space-card/space-card.component';
+import { AddSpaceComponent } from './ui/modal/admin-view/add-space/add-space.component';
+import { AddSpaceCardComponent } from './ui/admin-view/add-space-card/add-space-card.component';
+
 
 @NgModule({
   declarations: [
@@ -41,6 +44,8 @@ import { SpaceCardComponent } from './ui/mrater-view/space-card/space-card.compo
     MySpacesComponent,
     SpaceMarketplaceComponent,
     SpaceCardComponent,
+    AddSpaceComponent,
+    AddSpaceCardComponent,
   ],
   imports: [
     BrowserModule,
