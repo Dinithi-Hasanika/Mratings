@@ -47,4 +47,10 @@ public class SpaceRestController {
         spaceServices.deleteSpace(space_id);
         return ResponseEntity.ok(new CommonResponse("Successful", "Space deletion successful"));
     }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PostMapping("/spaces")
+    public ResponseEntity<List<Space>> addSpace(@RequestBody List<Space> spaces)  {
+        return ResponseEntity.ok(spaceServices.addSpaces(spaces));
+    }
 }

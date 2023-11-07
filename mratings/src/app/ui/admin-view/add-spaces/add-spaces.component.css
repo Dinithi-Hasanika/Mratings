@@ -1,0 +1,23 @@
+.formframe{
+  margin: 4%; 
+  border-radius: 12px; 
+  border-color: #114168;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.formcontent{
+    margin: 4%;
+}
+
+.buttonspace{
+    margin: 2%;
+}
+
+.btncol{
+    background-color: #114168;
+}
+
+.deletebtn{
+    background-color: red;
+}
