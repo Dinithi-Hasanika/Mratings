@@ -3,6 +3,7 @@ import { AddSpaceCardComponent } from '../add-space-card/add-space-card.componen
 import { SpaceService } from 'src/app/services/spaces/space.service';
 import { Space } from 'src/app/entity/Space';
 import { UserService } from 'src/app/services/users/user.service';
+import { window } from 'rxjs';
 
 @Component({
   selector: 'app-add-spaces',
@@ -15,13 +16,6 @@ export class AddSpacesComponent implements OnInit {
   spaceAdd = 1;
   spaceCards = new Array();
   public spaces: Space[] = [];
-
-  public  new_user = {
-    "id": "",
-    "userName": "",
-    "firstName": "",
-    "lastName": ""
- };
 
   @ViewChildren(AddSpaceCardComponent) children: QueryList<AddSpaceCardComponent>;
 
@@ -44,10 +38,24 @@ export class AddSpacesComponent implements OnInit {
     console.log(this.spaceCards);
   }
 
+  removeAllCards(){
+    console.log(this.spaceCards);
+    this.spaceCards.splice(0);
+    this.spaceAdd = 0;
+    this.spaces.splice(0);
+    console.log(this.spaceCards);
+  }
+
   getValue(){
-    this.children.forEach(child => this.spaces.push(child.space));
-   this.spaceService.addSpaces(this.spaces).subscribe(data => {});
-   //this.spaceService.getSpaces().subscribe();
+   this.children.forEach(child => this.spaces.push(child.space));
+   this.spaceService.addSpaces(this.spaces).subscribe(data => {
+    console.log(data);
+    if (data) {
+      console.log("success");
+      this.removeAllCards();
+    }
+
+   });
   }
 
 }
