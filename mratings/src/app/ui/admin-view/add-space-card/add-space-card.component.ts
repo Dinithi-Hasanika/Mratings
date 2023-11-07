@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Space } from 'src/app/entity/Space';
 
 @Component({
   selector: 'app-add-space-card',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-space-card.component.css']
 })
 export class AddSpaceCardComponent implements OnInit {
+
+  space = new Space("","","","",0,0);
 
   constructor() { }
 

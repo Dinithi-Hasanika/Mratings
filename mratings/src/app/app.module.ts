@@ -24,6 +24,7 @@ import { SpaceMarketplaceComponent } from './ui/mrater-view/space-marketplace/sp
 import { SpaceCardComponent } from './ui/mrater-view/space-card/space-card.component';
 import { AddSpaceCardComponent } from './ui/admin-view/add-space-card/add-space-card.component';
 import { AddSpacesComponent } from './ui/admin-view/add-spaces/add-spaces.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -45,7 +46,7 @@ import { AddSpacesComponent } from './ui/admin-view/add-spaces/add-spaces.compon
     SpaceMarketplaceComponent,
     SpaceCardComponent,
     AddSpaceCardComponent,
-    AddSpacesComponent,
+    AddSpacesComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +59,8 @@ import { AddSpacesComponent } from './ui/admin-view/add-spaces/add-spaces.compon
   }),
   HttpClientModule,
   NoopAnimationsModule,
-  MatTabsModule
+  MatTabsModule,
+  FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
