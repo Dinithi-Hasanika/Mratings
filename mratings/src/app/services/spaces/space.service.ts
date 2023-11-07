@@ -15,4 +15,15 @@ export class SpaceService {
   public getSpaces(): Observable<any> {
     return this.httpClient.get(this.baseUrl+"spaces");
   }
+
+  public addSpaces(spaces: any): Observable<any> {
+    return this.httpClient.post(this.baseUrl+"spaces", spaces);
+  }
+
+  // public addSpace(): Observable<any> {
+  //   return this.httpClient.get(this.baseUrl+"spaces");
+  // }
+  // public addUser(new_user: any): Observable<any>{
+  //   return this.httpClient.post(this.baseUrl+"user", new_user);
+  // }
 }
