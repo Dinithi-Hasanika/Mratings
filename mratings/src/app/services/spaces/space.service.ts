@@ -24,6 +24,9 @@ export class SpaceService {
     return this.httpClient.delete(this.baseUrl+"space/"+spaceid);
   }
 
+  public editSpace(space: any): Observable<any> {
+    return this.httpClient.patch(this.baseUrl+"space",space);
+  }
 
   // public addSpace(): Observable<any> {
   //   return this.httpClient.get(this.baseUrl+"spaces");

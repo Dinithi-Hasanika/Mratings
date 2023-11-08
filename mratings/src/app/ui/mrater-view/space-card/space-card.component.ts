@@ -33,6 +33,12 @@ console.log(data);
 
   saveEditedSpace(){
     console.log(this.space);
+    this.spaceService.editSpace(this.space).subscribe(data => {
+      console.log(data);
+      if(data){
+        this.space = data;
+      }
+    })
     this.isEdit = false;
   }
 
