@@ -2,8 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Space } from 'src/app/entity/Space';
 import { SpaceService } from 'src/app/services/spaces/space.service';
 
-
-
 @Component({
   selector: 'app-space-marketplace',
   templateUrl: './space-marketplace.component.html',

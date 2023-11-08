@@ -42,4 +42,14 @@ console.log(data);
     this.isEdit = false;
   }
 
+  subscribeToSpace(){
+   this.space.followers = this.space.followers + 1;
+   this.spaceService.editSpace(this.space).subscribe(data => {
+    console.log(data);
+    if(data){
+      this.space = data;
+    }
+  })
+  }
+
 }
