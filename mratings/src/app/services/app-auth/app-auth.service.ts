@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AsgardeoAuthService, AuthStateInterface, BasicUserInfo } from "@asgardeo/auth-angular";
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -8,11 +9,13 @@ export class AppAuthService {
   public isAuth = false;
   public isAdmin = false;
   
-  constructor(private auth: AsgardeoAuthService) { }
+  constructor(private auth: AsgardeoAuthService, private router: Router) { }
 
   public isAuthenticated(): boolean{
     this.auth.state$.subscribe((state: AuthStateInterface) => {
-         this.isAuth = state.isAuthenticated;
+         if(!state.isLoading){
+          this.isAuth = state.isAuthenticated;
+         }
         })
     return this.isAuth;
   }
@@ -37,4 +40,17 @@ export class AppAuthService {
     return this.isAdmin;
   }
  
+  public isRedirection():boolean{
+    this.auth.state$.subscribe((state: AuthStateInterface) => {
+    
+      if(!state.isLoading && !state.isAuthenticated){
+        this.router.navigate(["mratings"]);
+        return false;
+      }else{
+        return true;
+      }
+    });
+    return true;
+  }
+  
 }

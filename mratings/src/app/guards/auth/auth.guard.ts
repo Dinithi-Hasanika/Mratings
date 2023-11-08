@@ -26,14 +26,22 @@ export class AuthGuard implements CanActivate {
   //     }
   // }
   
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+//   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     
-   while(!this.isAuthenticated){
-    this.isAuthenticated = this.authService.isAuthenticated();
-    if(this.isAuthenticated){
-      return this.authService.isAdminUser();
-    }
-   }
-return false;
-  }
+//    while(!this.isAuthenticated){
+//     this.isAuthenticated = this.authService.isAuthenticated();
+//     if(this.isAuthenticated){
+//       return this.authService.isAdminUser();
+//     }
+//    }
+// return false;
+//   }
+
+canActivate(
+  next: ActivatedRouteSnapshot,
+  state: RouterStateSnapshot): boolean {
+    console.log('CanActivate called');
+
+  return this.authService.isRedirection();
+}
 }

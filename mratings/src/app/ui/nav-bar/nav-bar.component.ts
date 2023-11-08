@@ -17,9 +17,10 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.auth.state$.subscribe((state: AuthStateInterface) => {
-      this.isAuthenticated = state.isAuthenticated;
-      this.username = state.username;
+     
       if(!state.isLoading && state.isAuthenticated){
+        this.isAuthenticated = state.isAuthenticated;
+        this.username = state.username;
         this.auth
         .getBasicUserInfo()
         .then((user: BasicUserInfo) => {
