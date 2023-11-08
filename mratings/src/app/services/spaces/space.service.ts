@@ -20,6 +20,11 @@ export class SpaceService {
     return this.httpClient.post(this.baseUrl+"spaces", spaces);
   }
 
+  public deleteSpace(spaceid: any): Observable<any> {
+    return this.httpClient.delete(this.baseUrl+"space/"+spaceid);
+  }
+
+
   // public addSpace(): Observable<any> {
   //   return this.httpClient.get(this.baseUrl+"spaces");
   // }
