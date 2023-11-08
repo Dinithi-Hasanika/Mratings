@@ -1,8 +1,9 @@
 <div class="card">
     <div class="container">
       <h4 style="display: flex; justify-content: center; padding-top:10px ;"><b>{{space.spaceName}}</b></h4> 
-      <p style="padding-left: 5%; padding-top:10px ;">{{space.description}}</p> 
-      <div style="display: flex; justify-content: space-between; padding-top:20px ;"><p style="padding-left: 5%;">{{space.origin}}</p> <p>{{space.movies}} Movies</p> <p>{{space.followers}} Subscribers</p></div>
-      <div style="display: flex; justify-content: flex-end; padding-bottom: 10px;"><button class="button button4" *ngIf="!isAdmin">Subscribe</button><button class="button button4" *ngIf="isAdmin">Edit</button><button class="button button4" *ngIf="isAdmin" (click)="deleteSpace(space.id)">Delete</button></div>  
+      <p style="padding-left: 5%; padding-top:10px ;" *ngIf="!isAdmin">{{space.description}}</p> 
+      <input type="text" style=" padding-top:10px ; padding-bottom: 10px;" class="form-control" placeholder="Space Name" name="space.description" [(ngModel)] = "space.description" *ngIf="isAdmin" [disabled]="!this.isEdit">
+      <div style="display: flex; justify-content: space-between; padding-top:20px ;"><p style="padding-left: 5%;" *ngIf="!isAdmin">{{space.origin}}</p><input type="text" style="padding-left: 5%; padding-top:10px ; padding-bottom: 10px; max-width: fit-content;" class="form-control" placeholder="Space Origin" name="space.origin" [(ngModel)] = "space.origin" disabled="true" *ngIf="isAdmin" [disabled]="!this.isEdit"> <p>{{space.movies}} Movies</p> <p>{{space.followers}} Subscribers</p></div>
+      <div style="display: flex; justify-content: flex-end; padding-bottom: 10px;"><button class="button button4" *ngIf="!isAdmin">Subscribe</button><button class="button button4" *ngIf="isAdmin && isEdit" (click)="saveEditedSpace()">Save</button><button class="button button4" *ngIf="isAdmin && !isEdit" (click)="editSpace()">Edit</button><button class="button button4" *ngIf="isAdmin" (click)="deleteSpace(space.id)">Delete</button></div>  
     </div>
   </div>

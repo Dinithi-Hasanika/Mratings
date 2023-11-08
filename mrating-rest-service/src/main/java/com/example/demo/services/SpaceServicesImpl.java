@@ -39,8 +39,7 @@ public class SpaceServicesImpl implements SpaceServices{
 
     @Override
     public Space updateSpace(Space space) {
-
-        return null;
+        return spaceRepository.save(space);
     }
 
     @Override
