@@ -2,8 +2,6 @@ import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { AddSpaceCardComponent } from '../add-space-card/add-space-card.component';
 import { SpaceService } from 'src/app/services/spaces/space.service';
 import { Space } from 'src/app/entity/Space';
-import { UserService } from 'src/app/services/users/user.service';
-import { window } from 'rxjs';
 
 @Component({
   selector: 'app-add-spaces',
@@ -12,7 +10,7 @@ import { window } from 'rxjs';
 })
 export class AddSpacesComponent implements OnInit {
 
-  constructor(private spaceService: SpaceService,private userService: UserService) { }
+  constructor(private spaceService: SpaceService) { }
   spaceAdd = 1;
   spaceCards = new Array();
   public spaces: Space[] = [];
