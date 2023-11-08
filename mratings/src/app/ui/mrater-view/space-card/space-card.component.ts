@@ -13,6 +13,7 @@ export class SpaceCardComponent implements OnInit {
 
 @Input() space = {} as Space;
 @Input() isAdmin = false;
+isEdit: boolean = false;
 
   ngOnInit(): void {
   }
@@ -23,6 +24,16 @@ export class SpaceCardComponent implements OnInit {
 console.log(data);
     });
     location.reload();
+  }
+
+  editSpace(){
+    this.isEdit = true;
+    console.log(this.isEdit);
+  }
+
+  saveEditedSpace(){
+    console.log(this.space);
+    this.isEdit = false;
   }
 
 }
