@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
+import { User } from 'src/app/entity/User';
 
 @Component({
   selector: 'app-mrater-spaces',
@@ -8,6 +9,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 })
 export class MraterSpacesComponent implements OnInit {
   public isAdmin = false;
+ @Input() appUser = new User("","","","",[]) ;
+
   constructor() { }
 
   ngOnInit(): void {

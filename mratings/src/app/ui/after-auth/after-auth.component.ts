@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AsgardeoAuthService, AuthStateInterface, BasicUserInfo } from "@asgardeo/auth-angular";
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/users/user.service';
+import { User } from 'src/app/entity/User';
 
 @Component({
   selector: 'app-after-auth',
@@ -9,12 +10,8 @@ import { UserService } from 'src/app/services/users/user.service';
   styleUrls: ['./after-auth.component.css']
 })
 export class AfterAuthComponent implements OnInit {
- public  new_user = {
-    "id": "",
-    "userName": "",
-    "firstName": "",
-    "lastName": ""
- };
+
+ public spaceUser = new User("","","","",[]);
 
   constructor(private auth: AsgardeoAuthService, private router: Router, private userService: UserService,) { }
 
@@ -29,11 +26,11 @@ export class AfterAuthComponent implements OnInit {
           this.auth
           .getBasicUserInfo()
           .then((user: BasicUserInfo) => {
-          this.new_user.id = user.sub as string;
-          this.new_user.userName = user.username as string;
-          this.new_user.firstName = user['givenName'];
-          this.new_user.lastName = user['familyName'];
-            this.userService.addUser(this.new_user).subscribe(data => {
+          this.spaceUser.id = user.sub as string;
+          this.spaceUser.userName = user.username as string;
+          this.spaceUser.firstName = user['givenName'];
+          this.spaceUser.lastName = user['familyName'];
+            this.userService.addUser(this.spaceUser).subscribe(data => {
             });
             if(user['groups']){
             if(user['groups'].includes('Admin')){
