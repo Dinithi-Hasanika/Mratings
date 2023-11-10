@@ -12,13 +12,23 @@ export class SpaceMarketplaceComponent implements OnInit {
 
   constructor(private spaceService: SpaceService) { }
   public spaces: Space[] = [];
+  space: Space;
+  indexes: string[] = [];
   @Input() isAdmin = false;
   @Input() appUser = new User("","","","",[]) ;
   ngOnInit(): void {
 
+    this.appUser.userSpaces.forEach(data => {
+     this.indexes.push(data.id);
+    })
+
     this.spaceService.getSpaces().subscribe(data =>{
      for(var d of data){
-      this.spaces.push(d as Space)
+      this.space = d as Space;
+      if(!this.indexes.includes(this.space.id)){
+        this.spaces.push(d as Space);  
+      }
+        
      }
     })
 
