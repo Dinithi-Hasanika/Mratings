@@ -15,7 +15,6 @@ export class MySpacesComponent implements OnInit {
 
   ngOnInit(): void {
     this.spaces = this.appUser.userSpaces;
-    console.log(this.appUser.userSpaces);
   }
 
 }

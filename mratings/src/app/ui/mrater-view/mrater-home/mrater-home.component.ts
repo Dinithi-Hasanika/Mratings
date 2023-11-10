@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AsgardeoAuthService, AuthStateInterface, BasicUserInfo } from "@asgardeo/auth-angular";
 import { UserService } from 'src/app/services/users/user.service';
 import { User } from 'src/app/entity/User';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-mrater-home',
@@ -13,19 +14,13 @@ export class MraterHomeComponent implements OnInit {
   public userId = "";
   public appUser = new User("","","","",[]);
 
-  constructor(private auth: AsgardeoAuthService, private userService: UserService) { }
+  constructor( private auth: AsgardeoAuthService, private userService: UserService, private route: ActivatedRoute) { }
 
-  ngOnInit(): void {
-    this.auth.state$.subscribe((state: AuthStateInterface) => {
-         if(!state.isLoading && state.isAuthenticated){
-         this.auth.getBasicUserInfo().then((user: BasicUserInfo) => {
-          this.userId = user.sub as string; 
-          this.getAppUser();
-         })
-         }
-        });
-
-        
+   ngOnInit(): void {
+    
+    const routeParams = this.route.snapshot.paramMap;
+    this.userId = routeParams.get('userId') as string;  
+    this.getAppUser();      
   }
 
   getAppUser(){

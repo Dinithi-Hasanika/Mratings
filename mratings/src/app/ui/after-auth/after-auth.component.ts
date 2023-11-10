@@ -86,7 +86,7 @@ export class AfterAuthComponent implements OnInit {
   }
 
   goMraterView(){
-    this.router.navigate(['mrater/home']);
+    this.router.navigate(['mrater/home',this.userId]);
   }
 
 }
