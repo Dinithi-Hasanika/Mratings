@@ -1,1 +1,3 @@
-<p>my-spaces works!</p>
+<div *ngFor="let space of spaces">
+    <app-space-card [space]='space' [isAdmin]="false" [appUser]="this.appUser"></app-space-card>
+</div>

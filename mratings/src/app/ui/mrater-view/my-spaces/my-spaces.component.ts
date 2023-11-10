@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Space } from 'src/app/entity/Space';
+import { User } from 'src/app/entity/User';
 
 @Component({
   selector: 'app-my-spaces',
@@ -8,8 +10,12 @@ import { Component, OnInit } from '@angular/core';
 export class MySpacesComponent implements OnInit {
 
   constructor() { }
+  public spaces: Space[] = [];
+  @Input() appUser = new User("","","","",[]) ;
 
   ngOnInit(): void {
+    this.spaces = this.appUser.userSpaces;
+    console.log(this.appUser.userSpaces);
   }
 
 }
