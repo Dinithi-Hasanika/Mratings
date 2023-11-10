@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MatTabsModule } from '@angular/material/tabs';
 import { User } from 'src/app/entity/User';
 
 @Component({

@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: "", component: LandingComponent },
   { path: "afterauth", component: AfterAuthComponent },
   {path: "admin/home", component:AdminHomeComponent, canActivate: [AuthGuard]},
-  {path: "mrater/home", component: MraterHomeComponent, canActivate: [AuthGuard]},
+  {path: "mrater/home/:userId", component: MraterHomeComponent, canActivate: [AuthGuard]},
   { path: "mratings", component: LandingComponent }
 ];
 
